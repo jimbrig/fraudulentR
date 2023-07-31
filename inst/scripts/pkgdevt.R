@@ -29,9 +29,10 @@ usethis::create_package("fraudulentR")
 usethis::use_namespace()
 usethis::use_roxygen_md()
 usethis::use_git()
+usethis::use_package_doc()
 usethis::use_tibble() # #' @return a [tibble][tibble::tibble-package]
-usethis::use_pipe()
-usethis::use_tidy_eval()
+# usethis::use_pipe()
+# usethis::use_tidy_eval()
 devtools::document()
 
 
@@ -39,22 +40,22 @@ devtools::document()
 
 # set description and title first so included in GH repo
 desc::desc_set(
-  "Description" = "My awesome description.",
-  "Title" = "My awesome title"
+  "Description" = "Detect fraudulent insurance claims with R.",
+  "Title" = "Fraud Detection"
 )
 
 usethis::use_github(private = FALSE)
 
 # github labels -----------------------------------------------------------
-
+library(templateeR)
 templateeR::use_gh_labels()
 
 
 # package docs ------------------------------------------------------------
 
-usethis::use_readme_rmd()
-usethis::use_mit_license()
-usethis::use_package_doc()
+usethis::use_readme_md()
+# usethis::use_mit_license()
+# usethis::use_package_doc()
 usethis::use_news_md()
 
 
@@ -78,15 +79,22 @@ c(
 
 c(
   # add data prep script names here:
-
+  "age_groups",
+  "data_dictionary",
+  "gender",
+  "diagnosis_groups",
+  "length_of_stay",
+  "dataprep"
 ) |> purrr::walk(usethis::use_data_raw)
 
 # vignettes ---------------------------------------------------------------
 
 c(
   # add vignette names here:
-  "fraudulentR"
-
+  "fraudulentR",
+  "data",
+  "architecture",
+  "modelling"
 ) |> purrr::walk(usethis::use_vignette)
 
 

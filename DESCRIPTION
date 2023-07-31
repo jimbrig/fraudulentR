@@ -14,3 +14,7 @@ Imports:
     tibble
 URL: https://github.com/jimbrig/fraudulentR
 BugReports: https://github.com/jimbrig/fraudulentR/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

@@ -13,4 +13,9 @@
 require(usethis)
 require(devtools)
 
-usethis::create_package(getwd())
+
+
+
+# create package and populate DESCRIPTION ---------------------------------
+
+usethis::create_package("fraudulentR")
